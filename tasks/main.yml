@@ -1,0 +1,4 @@
+---
+
+- name: install ipfs
+  command: go get -u github.com/ipfs/go-ipfs/cmd/ipfs

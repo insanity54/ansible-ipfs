@@ -1,0 +1,3 @@
+---
+install_fuse: false  # Does nothing at the moment. It's just an example of how one would have the playbook install fuse.
+                     # One would override the install_fuse variable with 'true' in their own playbook which includes this role.

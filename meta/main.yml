@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Chris Grimmett aka insanity54 <chris@grimtech.net>
+  description: Quick and easy IPFS installer
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  galaxy_tags:
+    - installer
+    - web
+    - database
+    - cloud
+    - ipfs
+dependencies:
+  - { role: azavea.golang }

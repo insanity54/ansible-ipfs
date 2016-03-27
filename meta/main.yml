@@ -1,6 +1,7 @@
+<<<<<<< HEAD
 galaxy_info:
-  author: Chris Grimmett
-  description: Install ipfs on Ubuntu or CentOS
+  author: Chris Grimmett aka insanity54 <chris@grimtech.net>
+  description: Quick and easy IPFS installer for Ubuntu or CentOS
   company: insanity54
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -157,7 +158,11 @@ galaxy_info:
   #  - wheezy
 
   galaxy_tags:
-    - monitoring
+    - installer
+    - web
+    - database
+    - cloud
+    - ipfs
     # List tags for your role here, one per line. A tag is
     # a keyword that describes and categorizes the role.
     # Users find roles by searching for tags. Be sure to

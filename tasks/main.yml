@@ -1,5 +1,4 @@
 ---
-# tasks file for ipfs
 
 - name: Ensure download directory is present
   file: path={{ download_dir }} state=directory

@@ -1,21 +1,23 @@
 # ansible-ipfs
-playbook for an IPFS node/gateway
+Quick and easy playbook for running an IPFS node/gateway
 
 Work in progress
 
 
-## What it do
+## What it does
 
-* install golang
-* install ipfs
+* install pre-built ipfs binary
 * create ipfs system service
 * run ipfs service
-* bind to ports
+  * ipfs daemon using standard ports 4001, 5001, 8080
 
 
 
+## What it does not do
+
+* set up FUSE (could be implemented if there's interest.)
 
 
-## Contributions
+## Contributing
 
-PRs and Issues are much appreciated!
+Pull requests and issues are very much appreciated!

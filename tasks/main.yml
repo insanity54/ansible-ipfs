@@ -3,6 +3,9 @@
 - name: Ensure download directory is present
   file: path={{ download_dir }} state=directory
 
+- name: Ensure source directory is present
+  file: path={{ download_dir }}/{{ ipfssrc }} state=directory
+
 - include: redhat-deps.yml
   when: ansible_os_family == 'RedHat'
 

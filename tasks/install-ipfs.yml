@@ -6,7 +6,7 @@
 - name: unpack ipfs
   unarchive: src={{ download_dir }}/{{ ipfssrc }}.tar.gz dest={{ download_dir }}
 
-- shell: ls -la {{ download_dir }}/{{ ipfssrc }}
+- shell: ls -la {{ download_dir }}
   register: result
 
 - debug: var=result

@@ -1,5 +1,8 @@
 ---
 
+- name: Ensure dependencies are installed
+  include: dependencies.yml
+
 - name: Ensure download directory is present
   file: path={{ download_dir }} state=directory
 
@@ -11,7 +14,6 @@
 
 - include: debian-deps.yml
   when: ansible_os_family == 'Debian'
-
 
 - name: Create ipfs group
   group: name={{ ipfs_group }} state=present

@@ -1,0 +1,4 @@
+---
+
+- name: copy upstart script to system
+  copy: src=files/ipfs.conf dest=/etc/init/ipfs.conf owner=root group=root mode=0644

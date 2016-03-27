@@ -9,12 +9,10 @@
 - name: move ipfs to bin dir
   copy: src={{ download_dir }}/{{ ipfssrc }}/go-ipfs/ipfs dest=/usr/local/bin/ipfs owner={{ ipfs_user }} group={{ ipfs_group}} mode=0755
 
-- name: create system service for debian
-  include: debian-init.yml
+- include: debian-init.yml
   when: ansible_os_family == 'Debian'
 
-- name: create system service for redhat
-  include: redhat-init.yml
+- include: redhat-init.yml
   when: ansible_os_family == 'RedHat'
 
 - name: Ensure ipfs is started

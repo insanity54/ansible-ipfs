@@ -18,6 +18,12 @@ If you are looking for a way of using Ansible to deploy and manage a cluster of 
 * set up FUSE
 
 
+## Future potential
+
+* use gx to download and install ipfs
+* use gx webhooks to make a GitHub README.md badge showing whether or not this repo is using the latest stable ipfs
+
+
 ## Contributing
 
 Pull requests and new issues are very much appreciated!

@@ -1,0 +1,20 @@
+---
+# tasks file for ipfs
+
+- name: Ensure download directory is present
+  file: path={{ download_dir }} state=directory
+
+- include: redhat-deps.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: debian-deps.yml
+  when: ansible_os_family == 'Debian'
+
+
+- name: Create ipfs group
+  group: name={{ ipfs_group }} state=present
+
+- name: Create ipfs user
+  user: name={{ ipfs_user }} state=present groups={{ ipfs_group }}
+
+- include: install-ipfs.yml

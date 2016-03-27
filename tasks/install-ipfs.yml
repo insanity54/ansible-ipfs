@@ -1,0 +1,13 @@
+---
+
+- name: download ipfs
+  get_url: url={{ ipfsurl }} dest={{ download_dir }}/{{ ipfssrc }}.tar.gz
+
+- name: unpack ipfs
+  unarchive: src={{ download_dir }}/{{ ipfssrc }}.tar.gz dest={{ download_dir }}/{{ ipfssrc }}
+
+- name: move ipfs to bin dir
+  copy: src={{ download_dir }}/{{ ipfssrc }}/ipfs dest=/usr/local/bin/ipfs owner={{ ipfs_user }} group={{ ipfs_group}} mode=0755
+
+- name: Ensure ipfs is started
+  service: name=ipfs state=started enabled=yes

@@ -2,3 +2,6 @@
 
 - name: copy upstart script to system
   copy: src=files/ipfs.conf dest=/etc/init/ipfs.conf owner=root group=root mode=0644
+
+- name: create symlink to init.d
+  file: src=/etc/init/ipfs.conf dest=/etc/init.d/ipfs owner=root group=root state=link

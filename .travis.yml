@@ -55,8 +55,8 @@ script:
 
 
   - >
-    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm curl 'http://localhost:5001/api/v0/object/get?arg=QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme&stream-channels=true' --compressed
-    | grep 'Hello and Welcome to IPFS!'
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl 'http://localhost:5001/api/v0/object/get?arg=QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme&stream-channels=true' --compressed
+    | grep 'Hello and Welcome to IPFS!'"
 
   # Test ipfs server use running.
   - >

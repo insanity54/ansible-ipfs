@@ -4,4 +4,4 @@
   copy: src={{role_path}}/files/ipfs dest=/etc/init.d/ipfs owner=root group=root mode=0755
 
 - name: make ipfs service start on boot
-  command: /usr/sbin/update-rc.d -f ipfs defaults
+  command: creates="/etc/rc0.d/*ipfs" /usr/sbin/update-rc.d -f ipfs defaults

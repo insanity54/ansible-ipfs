@@ -29,7 +29,7 @@ If you are looking for a way of using Ansible to deploy and manage a cluster of 
 
 ## Credits
 
-The ipfs init script used in this project is written by [dylanPowers](https://github.com/dylanPowers) from the [ipfs-linux-service](https://github.com/dylanPowers/ipfs-linux-service) project
+The ipfs init script used in this project was originally written by [dylanPowers](https://github.com/dylanPowers) from the [ipfs-linux-service](https://github.com/dylanPowers/ipfs-linux-service) project. ansible-ipfs made one change-- where the ipfs daemon saves it's logs to. (/var/log/ipfs.log instead of /var/lib/ipfs/daemon.log)
 
 
 ## Contributing

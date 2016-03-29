@@ -46,15 +46,15 @@ script:
 
   # Test role idempotence.
   - >
-    sudo docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-ipfs/tests/${playbook}
+    sudo docker exec -it "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-ipfs/tests/${playbook}
     | grep 'changed=0.*failed=0'
-    
+
 #&& (echo 'Idempotence test: pass' && exit 0)
 #|| (echo 'Idempotence test: fail' && exit 1)
 
   # Test ipfs server use running.
   - >
-    sudo docker exec "$(cat ${container_id})" service ipfs status
+    sudo docker exec -it "$(cat ${container_id})" service ipfs status
     | grep 'ipfs.*running'
     && (echo 'Service ipfs test: pass' && exit 0)
     || (echo 'Service ipfs test: fail' && exit 1)
@@ -62,7 +62,7 @@ script:
 
   # Verify that we can see the web api
   - >
-    sudo docker exec "$(cat ${container_id})" curl -s 'http://localhost:5001/api/v0/object/get?arg=QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme&stream-channels=true' --compressed 2>/dev/null
+    sudo docker exec -it "$(cat ${container_id})" curl -s 'http://localhost:5001/api/v0/object/get?arg=QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme&stream-channels=true' --compressed 2>/dev/null
     | grep 'Hello and Welcome to IPFS!'
     && (echo 'Web API test: pass' && exit 0)
     || (echo 'Web API test: fail' && exit 1)
@@ -78,7 +78,7 @@ script:
 
   # Verify that the swarm port is open
   - >
-    sudo docker exec "$(cat ${container_id})" curl -s 'http://localhost:4001/' --compressed 2>/dev/null
+    sudo docker exec -it "$(cat ${container_id})" curl -s 'http://localhost:4001/' --compressed 2>/dev/null
     | grep -q 'Blowfish*'
     && (echo 'Web gateway test: pass' && exit 0)
     || (echo 'Web gateway test: fail' && exit 1)

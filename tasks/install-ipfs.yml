@@ -15,6 +15,9 @@
 - name: move ipfs to bin dir
   copy: remote_src=true src={{ download_dir }}/{{ ipfssrc }}/go-ipfs/ipfs dest=/usr/local/bin/ipfs owner={{ ipfs_user }} group={{ ipfs_group}} mode=0755
 
+- name: initialize ipfs
+  command: su - "{{ ipfs_user }}" /usr/local/bin/ipfs init
+
 - include: debian-init.yml
   when: ansible_os_family == 'Debian'
 

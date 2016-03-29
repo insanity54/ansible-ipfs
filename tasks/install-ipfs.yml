@@ -15,5 +15,11 @@
 - include: redhat-init.yml
   when: ansible_os_family == 'RedHat'
 
+- name: make sure init script was copied
+  command: ls -la /etc/init/ipfs.conf
+  register: test
+
+- debug: var=test
+
 - name: Ensure ipfs is started
   service: name=ipfs state=started enabled=yes

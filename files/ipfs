@@ -20,7 +20,7 @@ PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
 IPFS_PATH=/var/lib/ipfs
-IPFS_USER=ipfs-daemon
+IPFS_USER=ipfs
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0

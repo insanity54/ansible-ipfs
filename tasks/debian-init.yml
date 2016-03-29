@@ -1,10 +1,7 @@
 ---
 
-- name: copy upstart script to system
-  copy: src=files/ipfs.conf dest=/etc/init/ipfs.conf owner=root group=root mode=0644
+- name: copy init.d script to system
+  copy: src=files/ipfs dest=/etc/init.d/ipfs owner=root group=root mode=0755
 
-- name: register upstart script
-  command: initctl reload-configuration
-
-- name: create symlink to init.d
-  file: src=/etc/init/ipfs.conf dest=/etc/init.d/ipfs owner=root group=root state=link
+- name: make ipfs service start on boot
+  command: /usr/sbin/update-rc.d -f ipfs defaults

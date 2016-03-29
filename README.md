@@ -27,6 +27,11 @@ If you are looking for a way of using Ansible to deploy and manage a cluster of 
 * use gx webhooks to make a GitHub README.md badge showing whether or not this repo is using the latest stable ipfs
 
 
+## Credits
+
+The ipfs init script used in this project is written by [dylanPowers](https://github.com/dylanPowers) from the [ipfs-linux-service](https://github.com/dylanPowers/ipfs-linux-service) project
+
+
 ## Contributing
 
 Pull requests and new issues are very much appreciated!

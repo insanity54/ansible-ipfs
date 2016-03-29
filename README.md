@@ -1,4 +1,7 @@
 # ansible-ipfs
+
+[![Build Status](https://travis-ci.org/insanity54/ansible-ipfs.svg?branch=master)](https://travis-ci.org/insanity54/ansible-ipfs)
+
 Quick and easy playbook for installing an IPFS node/gateway as a service
 
 If you are looking for a way of using Ansible to deploy and manage a cluster of ipfs nodes/gateways meant for pinning and serving content, you might like my other project, [ipfs-kloud](https://github.com/insanity54/ipfs-kloud)

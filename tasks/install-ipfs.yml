@@ -4,7 +4,10 @@
   get_url: url={{ ipfsurl }} dest={{ download_dir }}/{{ ipfssrc }}.tar.gz
 
 - name: unpack ipfs
-  unarchive: src={{ download_dir }}/{{ ipfssrc }}.tar.gz dest={{ download_dir }}/{{ ipfssrc }} creates={{ download_dir }}/{{ ipfssrc }}/go-ipfs
+  command: tar xf {{ download_dir }}/{{ ipfssrc }}.tar.gz
+  creates: {{ download_dir }}/{{ ipfssrc }}/go-ipfs
+  ## switch to unarchive when unarchive module is fixed. (It's broken in 2.0 https://github.com/ansible/ansible/issues/11274)
+  #unarchive: src={{ download_dir }}/{{ ipfssrc }}.tar.gz dest={{ download_dir }}/{{ ipfssrc }} creates={{ download_dir }}/{{ ipfssrc }}/go-ipfs
 
 - name: move ipfs to bin dir
   copy: src={{ download_dir }}/{{ ipfssrc }}/go-ipfs/ipfs dest=/usr/local/bin/ipfs owner={{ ipfs_user }} group={{ ipfs_group}} mode=0755

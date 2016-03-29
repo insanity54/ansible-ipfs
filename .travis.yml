@@ -44,13 +44,6 @@ script:
   # Ansible role  check.
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-ipfs/tests/${playbook}'
 
-  # debug
-  - >
-    sudo docker exec "$(cat ${container_id})" ls -la /etc/init/ipfs.conf
-
-  - >
-    sudo docker exec "$(cat ${container_id})" service ipfs status
-
   # Test role idempotence.
   - >
     sudo docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-ipfs/tests/${playbook}

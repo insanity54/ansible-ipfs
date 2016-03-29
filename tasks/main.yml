@@ -24,7 +24,7 @@
 - include: install-ipfs.yml
 
 - name: initialize ipfs
-  command: su - "{{ ipfs_user }}" /bin/sh -c /usr/local/bin/ipfs init
+  command: creates="/home/{{ ipfs_user }}/.ipfs" su - "{{ ipfs_user }}" /bin/sh -c /usr/local/bin/ipfs init
 
 - name: Ensure ipfs is started
   service: name=ipfs state=started enabled=yes

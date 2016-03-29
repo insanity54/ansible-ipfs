@@ -60,34 +60,34 @@ script:
 
   # Test ipfs server use running.
   - >
-    sudo docker exec -it "$(cat ${container_id})" service ipfs status
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "service ipfs status
     | grep 'ipfs.*running'
     && (echo 'Service ipfs test: pass' && exit 0)
-    || (echo 'Service ipfs test: fail' && exit 1)
+    || (echo 'Service ipfs test: fail' && exit 1)"
 
 
   # Verify that we can see the web api
   - >
-    sudo docker exec -it "$(cat ${container_id})" curl -s 'http://localhost:5001/api/v0/object/get?arg=QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme&stream-channels=true' --compressed 2>/dev/null
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:5001/api/v0/object/get?arg=QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme&stream-channels=true' --compressed 2>/dev/null
     | grep 'Hello and Welcome to IPFS!'
     && (echo 'Web API test: pass' && exit 0)
-    || (echo 'Web API test: fail' && exit 1)
+    || (echo 'Web API test: fail' && exit 1)"
 
 
   # Verify that the gateway is usable
   - >
-    sudo docker exec "$(cat ${container_id})" curl -s 'http://localhost:8080/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme' --compressed 2>/dev/null
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:8080/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme' --compressed 2>/dev/null
     | grep 'Hello and Welcome to IPFS!'
     && (echo 'Web gateway test: pass' && exit 0)
-    || (echo 'Web gateway test: fail' && exit 1)
+    || (echo 'Web gateway test: fail' && exit 1)"
 
 
   # Verify that the swarm port is open
   - >
-    sudo docker exec -it "$(cat ${container_id})" curl -s 'http://localhost:4001/' --compressed 2>/dev/null
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed 2>/dev/null
     | grep -q 'Blowfish*'
     && (echo 'Web gateway test: pass' && exit 0)
-    || (echo 'Web gateway test: fail' && exit 1)
+    || (echo 'Web gateway test: fail' && exit 1)"
 
   # Clean up
   - sudo docker stop "$(cat ${container_id})"

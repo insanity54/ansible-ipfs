@@ -29,11 +29,11 @@
 
 - debug: var=init
 
-- name: register log for debug purpose
-  command: cat /var/log/ipfs.log
-  register: result
-
-- debug: var=result
+# - name: register log for debug purpose
+#   command: cat /var/log/ipfs.log
+#   register: result
+# 
+# - debug: var=result
 
 - name: Ensure ipfs is started
   service: name=ipfs state=started enabled=yes

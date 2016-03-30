@@ -37,3 +37,6 @@
 
 - name: Ensure ipfs is started
   service: name=ipfs state=started enabled=yes
+  register: baby
+
+- debug: var=baby

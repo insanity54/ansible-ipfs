@@ -15,8 +15,8 @@
 - name: move ipfs to bin dir
   copy: remote_src=true src={{ download_dir }}/{{ ipfssrc }}/go-ipfs/ipfs dest=/usr/local/bin/ipfs owner=root group=root mode=0755
 
-- name: create ipfs log file
-  file: path=/var/log/ipfs.log state=touch owner={{ ipfs_user }} group={{ ipfs_group }} mode=0644
+# - name: create ipfs log file
+#   file: path=/var/log/ipfs.log state=touch owner={{ ipfs_user }} group={{ ipfs_group }} mode=0644
 
 - include: debian-init.yml
   when: ansible_os_family == 'Debian'

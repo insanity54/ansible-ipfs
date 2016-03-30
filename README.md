@@ -2,17 +2,18 @@
 
 [![Build Status](https://travis-ci.org/insanity54/ansible-ipfs.svg?branch=master)](https://travis-ci.org/insanity54/ansible-ipfs)
 
-Quick and easy playbook for installing an IPFS node/gateway as a service
+Quick and easy playbook for installing an IPFS node as a service
 
-If you are looking for a way of using Ansible to deploy and manage a cluster of ipfs nodes/gateways meant for pinning and serving content, you might like my other project, [ipfs-kloud](https://github.com/insanity54/ipfs-kloud)
+If you are looking for a way of using Ansible to deploy and manage one or more ipfs gateways meant for pinning and serving content, you might like my other project, [ipfs-kloud](https://github.com/insanity54/ipfs-kloud)
 
 
 ## What it does
 
 * extract and copy pre-built ipfs binary to /usr/local/bin/ipfs
 * create ipfs system service (files/ipfs.conf)
-* run ipfs service
-  * ipfs daemon runs using standard ports 4001, 5001, 8080
+* initialize IPFS
+* run ipfs service as user ipfs
+  * ipfs daemon exposes ONLY the swarm port 4001 to the world.
 
 
 
@@ -24,13 +25,13 @@ If you are looking for a way of using Ansible to deploy and manage a cluster of 
 ## Future potential
 
 * use gx to download and install ipfs
-* use gx webhooks to make a GitHub README.md badge showing whether or not this repo is using the latest stable ipfs
+* use gx api to make a GitHub README.md badge showing whether or not this repo is using the latest stable ipfs
 
 
 ## Credits
 
-The ipfs init script used in this project was originally written by [dylanPowers](https://github.com/dylanPowers) from the [ipfs-linux-service](https://github.com/dylanPowers/ipfs-linux-service) project. ansible-ipfs made two changes-- where the ipfs daemon saves it's logs to. (/var/log/ipfs.log instead of /var/lib/ipfs/daemon.log), and the user the ipfs daemon runs as (ipfs instead of ipfs-daemon)
-
+[Inter Planetary File System](https://ipfs.io/)
+[Sample /etc/init.d script](https://gist.github.com/naholyr/4275302)
 
 ## Contributing
 

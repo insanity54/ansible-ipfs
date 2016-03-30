@@ -56,7 +56,7 @@ script:
   # Test ipfs server use running.
   - >
     sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "service ipfs status
-    | grep 'ipfs.*running'
+    | grep 'Running'
     && (echo 'Service ipfs test: pass' && exit 0)
     || (echo 'Service ipfs test: fail' && exit 1)"
 
@@ -65,8 +65,8 @@ script:
   - >
     sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed 2>/dev/null
     | grep -q 'Blowfish*'
-    && (echo 'Web gateway test: pass' && exit 0)
-    || (echo 'Web gateway test: fail' && exit 1)"
+    && (echo 'Swarm port test: pass' && exit 0)
+    || (echo 'Swarm port test: fail' && exit 1)"
 
   # Clean up
   - sudo docker stop "$(cat ${container_id})"

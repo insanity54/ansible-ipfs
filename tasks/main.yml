@@ -24,7 +24,7 @@
 - include: install-ipfs.yml
 
 - name: initialize ipfs
-  command: creates="/home/{{ ipfs_user }}/.ipfs/version" 'su - "{{ ipfs_user }}" /bin/sh -c "/usr/local/bin/ipfs init"'
+  command: creates="/home/{{ ipfs_user }}/.ipfs/version" "su - {{ ipfs_user }} /bin/sh -c /usr/local/bin/ipfs init"
 
 - name: register log for debug purpose
   shell: cat /var/log/ipfs.log

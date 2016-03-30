@@ -30,7 +30,7 @@
 - debug: var=init
 
 - name: register log for debug purpose
-  shell: cat /var/log/ipfs.log
+  command: cat /var/log/ipfs.log
   register: result
 
 - debug: var=result

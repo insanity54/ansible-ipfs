@@ -35,4 +35,4 @@ If you are looking for a way of using Ansible to deploy and manage one or more i
 
 ## Contributing
 
-Pull requests and new issues are very much appreciated!
+Pull requests and new issues are very much appreciated! Thanks

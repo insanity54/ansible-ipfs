@@ -3,7 +3,9 @@ Description=IPFS Daemon
 
 
 [Service]
-ExecStart=su - ipfs bash -c "/usr/local/bin/ipfs daemon"
+User="{{ipfs_user}}"
+Group="{{ipfs_group}}"
+ExecStart=/usr/local/bin/ipfs daemon
 
 
 [Install]

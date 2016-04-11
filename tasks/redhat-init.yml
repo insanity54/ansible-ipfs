@@ -1,9 +1,4 @@
 ---
 
-# @todo below is debian style. make below equivalent redhat/centos style
-
-- name: copy init.d script to system
-  copy: src={{role_path}}/files/ipfs dest=/etc/init.d/ipfs owner=root group=root mode=0755
-
-- name: make ipfs service start on boot
-  command: creates="/etc/rc0.d/*ipfs" /usr/sbin/update-rc.d -f ipfs defaults
+- name: copy systemd script to system
+  template: src={{role_path}}/templates/ipfs.service.j2 dest=/etc/systemd/system/ipfs.service owner=root group=root mode=0755

@@ -1,0 +1,10 @@
+[Unit]
+Description=IPFS Daemon
+
+
+[Service]
+ExecStart=su - ipfs bash -c "/usr/local/bin/ipfs daemon"
+
+
+[Install]
+WantedBy=multi-user.target

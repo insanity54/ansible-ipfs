@@ -30,8 +30,8 @@ If you are looking for a way of using Ansible to deploy and manage one or more i
 
 ## Credits
 
-[Inter Planetary File System](https://ipfs.io/)
-[/etc/init.d template](https://github.com/fhd/init-script-template)
+* [Inter Planetary File System](https://ipfs.io/)
+* [/etc/init.d template](https://github.com/fhd/init-script-template)
 
 ## Contributing
 

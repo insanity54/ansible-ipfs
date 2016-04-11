@@ -64,7 +64,9 @@ script:
 
   # Verify that the swarm port is open
   - >
-    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed 2>/dev/null"
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed"
+
+#2>/dev/null"
 
 # | grep -q 'Blowfish*'
 # && (echo 'Swarm port test: pass' && exit 0)

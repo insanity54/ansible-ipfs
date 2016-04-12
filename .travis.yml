@@ -55,18 +55,17 @@ script:
 
   # Test ipfs server use running.
   - >
-    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "ansible localhost -m service -a \"name=ipfs state=started\""
-# | grep '"state": "started"'
-# && (echo 'Service ipfs test: pass' && exit 0)
-# || (echo 'Service ipfs test: fail' && exit 1)"
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "ansible localhost -m service -a \"name=ipfs state=started\"
+    && (echo 'Service ipfs test: pass' && exit 0)
+    || (echo 'Service ipfs test: fail' && exit 1)"
 
 
   # Verify that the swarm port is open
   - >
-    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed 2>/dev/null"
-# | grep -q 'SHA512'
-# && (echo 'Swarm port test: pass' && exit 0)
-# || (echo 'Swarm port test: fail' && exit 1)"
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed 2>/dev/null
+    | grep -q 'SHA512'
+    && (echo 'Swarm port test: pass' && exit 0)
+    || (echo 'Swarm port test: fail' && exit 1)"
 
   # Clean up
   - sudo docker stop "$(cat ${container_id})"

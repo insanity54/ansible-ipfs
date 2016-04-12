@@ -2,16 +2,16 @@
 sudo: required
 
 env:
-  - distribution: centos
-    version: 6
-    init: /sbin/init
-    run_opts: ""
-    playbook: test.yml
-  - distribution: centos
-    version: 7
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    playbook: test.yml
+  # - distribution: centos
+  #   version: 6
+  #   init: /sbin/init
+  #   run_opts: ""
+  #   playbook: test.yml
+  # - distribution: centos
+  #   version: 7
+  #   init: /usr/lib/systemd/systemd
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  #   playbook: test.yml
   - distribution: ubuntu
     version: 14.04
     init: /sbin/init
@@ -63,7 +63,7 @@ script:
 
   # Verify that the swarm port is open
   - >
-    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed" 2>/dev/null"
+    sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /bin/bash -c "curl -s 'http://localhost:4001/' --compressed 2>/dev/null"
 # | grep -q 'SHA512'
 # && (echo 'Swarm port test: pass' && exit 0)
 # || (echo 'Swarm port test: fail' && exit 1)"

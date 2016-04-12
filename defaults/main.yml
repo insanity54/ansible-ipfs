@@ -9,7 +9,10 @@ download_dir: "{{ ansible_env.HOME }}/ipfs"
 
 
 # Define the download url for the ipfs files and the version you want to use.
-ipfsurl: http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_linux-amd64.tar.gz
+#ipfsurl: http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_linux-386.tar.gz ## 64-bit v0.3.11
+#ipfsurl: http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_linux-amd64.tar.gz ## 64-bit v0.3.11
+#ipfsurl: http://dist.ipfs.io/go-ipfs/v0.4.0/go-ipfs_v0.4.0_linux-386.tar.gz ## 32-bit v0.4.0
+ipfsurl: http://dist.ipfs.io/go-ipfs/v0.4.0/go-ipfs_v0.4.0_linux-amd64.tar.gz ## 64-bit v0.4.0
 
 # This is the directory where the ipfs source files will be placed, this should be
 # the directory which is created when the download file is unpacked when runnint

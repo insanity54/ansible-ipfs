@@ -24,6 +24,7 @@ If you are looking for a way of using Ansible to deploy and manage one or more i
 
 ## Future potential
 
+* run on centos (tests and install logic is here, but I got hung up on systemd)
 * use gx to download and install ipfs
 * use gx api to make a GitHub README.md badge showing whether or not this repo is using the latest stable ipfs
 

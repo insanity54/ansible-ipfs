@@ -35,10 +35,10 @@ case "$1" in
         cd "$dir"
         if [ -z "$user" ]; then
             #sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
-            su - "$user" bash -c "$cmd >> $stdout_log 2>> $stderr_log &"
+            su - ipfs bash -c "$cmd >> $stdout_log 2>> $stderr_log" &
         else
             #sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
-            su - "$user" bash -c "$cmd >> $stdout_log 2>> $stderr_log &"
+            su - "$user" bash -c "$cmd >> $stdout_log 2>> $stderr_log" &
         fi
         echo $! > "$pid_file"
         if ! is_running; then

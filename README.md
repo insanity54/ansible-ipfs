@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/insanity54/ansible-ipfs.svg?branch=master)](https://travis-ci.org/insanity54/ansible-ipfs)
 
+[GitHub Repo](https://github.com/insanity54/ansible-ipfs/)
 [Ansible Galaxy page](https://galaxy.ansible.com/insanity54/ipfs/)
 
 Quick and easy playbook for installing an IPFS node as a service

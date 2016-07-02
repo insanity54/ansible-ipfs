@@ -12,7 +12,7 @@
 
 Quick and easy playbook for installing an IPFS node as a service
 
-If you are looking for a way of using Ansible to deploy and manage one or more ipfs gateways meant for pinning and serving content, you might like my other project, [ipfs-kloud](https://github.com/insanity54/ipfs-kloud)
+~~If you are looking for a way of using Ansible to deploy and manage one or more ipfs gateways meant for pinning and serving content, you might like my other project, [ipfs-kloud](https://github.com/insanity54/ipfs-kloud)~~ abandoned project
 
 
 ## What it does

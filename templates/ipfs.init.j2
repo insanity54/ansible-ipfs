@@ -20,7 +20,7 @@ DESC="Inter Planetary File System daemon"
 NAME=ipfs
 DAEMON=/usr/local/bin/$NAME
 DAEMON_ARGS="daemon"
-DAEMON_USER="ipfs"
+DAEMON_USER="{{ ipfs_user }}"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 

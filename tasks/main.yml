@@ -24,7 +24,7 @@
 - include: install-ipfs.yml
 
 - name: initialize ipfs
-  command: creates="/home/{{ ipfs_user }}/.ipfs/version" su -c "/usr/local/bin/ipfs init" "{{ ipfs_user }}"
+  command: creates="/home/{{ ipfs_user }}/.ipfs/version" su -c "script --return -c '/usr/local/bin/ipfs init' /dev/null" "{{ ipfs_user }}"
   register: init
 
 - debug: var=init
